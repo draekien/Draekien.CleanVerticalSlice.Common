@@ -1,0 +1,1 @@
+Draekien.CleanVerticalSlice.Common

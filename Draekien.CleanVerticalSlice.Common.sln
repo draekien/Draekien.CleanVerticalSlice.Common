@@ -4,11 +4,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{1261EFC7-9F0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CA53EA48-5475-4006-907E-18B6302007A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Api", "Src\Common.Api\Common.Api.csproj", "{DB007C1B-C0B3-4E98-945B-C97399515C8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draekien.CleanVerticalSlice.Common.Api", "Src\Draekien.CleanVerticalSlice.Common.Api\Draekien.CleanVerticalSlice.Common.Api.csproj", "{DB007C1B-C0B3-4E98-945B-C97399515C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Application", "Src\Common.Application\Common.Application.csproj", "{900866AD-E3A2-40DF-A019-076248CAB8D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draekien.CleanVerticalSlice.Common.Application", "Src\Draekien.CleanVerticalSlice.Common.Application\Draekien.CleanVerticalSlice.Common.Application.csproj", "{900866AD-E3A2-40DF-A019-076248CAB8D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Application.UnitTests", "Test\Common.Application.UnitTests\Common.Application.UnitTests.csproj", "{3D747879-4389-44C4-BBB5-BBFA370F1C3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draekien.CleanVerticalSlice.Common.Application.UnitTests", "Test\Draekien.CleanVerticalSlice.Common.Application.UnitTests\Draekien.CleanVerticalSlice.Common.Application.UnitTests.csproj", "{3D747879-4389-44C4-BBB5-BBFA370F1C3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

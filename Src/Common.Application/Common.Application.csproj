@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Draekien.CleanVerticalSlice.Common.Application</Title>
+        <Authors>William Pei</Authors>
+        <Description>The Common Application package for setting up a CleanVerticalSlice Application project</Description>
+        <Copyright>William Pei</Copyright>
+        <PackageProjectUrl>https://github.com/draekien/Draekien.CleanVerticalSlice.Common</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/draekien/Draekien.CleanVerticalSlice.Common</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.5.4" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+      <PackageReference Include="Serilog" Version="2.10.0" />
+    </ItemGroup>
+
+</Project>

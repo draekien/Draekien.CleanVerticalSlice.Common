@@ -4,12 +4,14 @@
         <TargetFramework>net5.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Draekien.CleanVerticalSlice.Common.Application</Title>
+        <Version>1.0.0</Version>
         <Authors>William Pei</Authors>
         <Description>The Common Application package for setting up a CleanVerticalSlice Application project</Description>
         <Copyright>William Pei</Copyright>
         <PackageProjectUrl>https://github.com/draekien/Draekien.CleanVerticalSlice.Common</PackageProjectUrl>
         <RepositoryUrl>https://github.com/draekien/Draekien.CleanVerticalSlice.Common</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>

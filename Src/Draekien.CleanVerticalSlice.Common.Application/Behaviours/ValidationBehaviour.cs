@@ -10,6 +10,11 @@ using MediatR;
 
 namespace Draekien.CleanVerticalSlice.Common.Application.Behaviours
 {
+    /// <summary>
+    /// Applies all registered validators before proceeding with request handling
+    /// </summary>
+    /// <typeparam name="TRequest">The request type</typeparam>
+    /// <typeparam name="TResponse">The response type</typeparam>
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
@@ -20,6 +25,7 @@ namespace Draekien.CleanVerticalSlice.Common.Application.Behaviours
         }
 
         /// <inheritdoc />
+        /// <exception cref="ValidationException">One or more validation failures occured</exception>
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             if (!_validators.Any()) return await next();

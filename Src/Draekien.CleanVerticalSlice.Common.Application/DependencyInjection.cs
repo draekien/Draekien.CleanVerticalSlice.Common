@@ -22,7 +22,7 @@ namespace Draekien.CleanVerticalSlice.Common.Application
             var callingAssembly = Assembly.GetCallingAssembly();
             services.AddAutoMapper(config =>
             {
-                config.AddProfile(new MappingProfile(callingAssembly));
+                config.AddProfile(new MappingProfile());
             });
             services.AddValidatorsFromAssembly(callingAssembly);
             services.AddMediatR(callingAssembly);

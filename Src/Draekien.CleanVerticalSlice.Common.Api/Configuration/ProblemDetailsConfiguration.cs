@@ -8,7 +8,6 @@ using Draekien.CleanVerticalSlice.Common.Api.CustomProblemDetails;
 using FluentValidation;
 
 using Hellang.Middleware.ProblemDetails;
-
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

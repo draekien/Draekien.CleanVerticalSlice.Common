@@ -12,6 +12,9 @@ namespace Draekien.CleanVerticalSlice.Common.Api.Controllers
     {
         private IMediator _mediator;
 
+        /// <summary>
+        /// Returns an instance of <see cref="IMediator"/>
+        /// </summary>
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
     }
 }

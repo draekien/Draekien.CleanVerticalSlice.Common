@@ -14,7 +14,7 @@ namespace Draekien.CleanVerticalSlice.Common.Application.Mappings
         /// </summary>
         public MappingProfile()
         {
-            ApplyMappingsFromAssembly(Assembly.GetCallingAssembly());
+            ApplyMappingsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         /// <summary>

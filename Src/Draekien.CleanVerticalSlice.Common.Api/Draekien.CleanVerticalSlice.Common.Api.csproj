@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <Title>Draekien.CleanVerticalSlice.Common.Api</Title>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <Authors>William Pei</Authors>
         <Description>The Common API package for setting up a CleanVerticalSlice API project</Description>
         <Copyright>William Pei</Copyright>

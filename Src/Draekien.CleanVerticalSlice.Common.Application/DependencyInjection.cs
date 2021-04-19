@@ -17,9 +17,10 @@ namespace Draekien.CleanVerticalSlice.Common.Application
         /// Adds AutoMapper profile, Fluent Validators, and MediatR Requests and Handlers
         /// </summary>
         /// <param name="services">The current <see cref="IServiceCollection"/></param>
-        public static void AddCommonApplication(this IServiceCollection services)
+        /// <param name="callingApplicationAssembly">The calling application assembly</param>
+        public static void AddCommonApplication(this IServiceCollection services, Assembly callingApplicationAssembly = null)
         {
-            var callingAssembly = Assembly.GetCallingAssembly();
+            Assembly callingAssembly = callingApplicationAssembly ?? Assembly.GetCallingAssembly();
             services.AddAutoMapper(config =>
             {
                 config.AddProfile(new MappingProfile(callingAssembly));

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Title>Draekien.CleanVerticalSlice.Common.TestUtils</Title>
+        <Version>1.0.4</Version>
+        <Authors>William Pei</Authors>
+        <Description>The Testing Utilities package for setting up a CleanVerticalSlice Unit Testing projects</Description>
+        <Copyright>William Pei</Copyright>
+        <PackageProjectUrl>https://github.com/draekien/Draekien.CleanVerticalSlice.Common</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/draekien/Draekien.CleanVerticalSlice.Common</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Draekien.CleanVerticalSlice.Common.Application\Draekien.CleanVerticalSlice.Common.Application.csproj" />
+    </ItemGroup>
+
+</Project>

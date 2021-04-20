@@ -22,6 +22,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Src\Draekien.CleanVerticalSlice.Common.Application\Draekien.CleanVerticalSlice.Common.Application.csproj" />
+      <ProjectReference Include="..\..\Src\Draekien.CleanVerticalSlice.Common.TestUtils\Draekien.CleanVerticalSlice.Common.TestUtils.csproj" />
     </ItemGroup>
 
 </Project>

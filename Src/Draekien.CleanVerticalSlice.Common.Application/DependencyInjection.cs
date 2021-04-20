@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 using Draekien.CleanVerticalSlice.Common.Application.Behaviours;
 using Draekien.CleanVerticalSlice.Common.Application.Mappings;
@@ -16,17 +18,20 @@ namespace Draekien.CleanVerticalSlice.Common.Application
         /// <summary>
         /// Adds AutoMapper profile, Fluent Validators, and MediatR Requests and Handlers
         /// </summary>
-        /// <param name="services">The current <see cref="IServiceCollection"/></param>
-        /// <param name="callingApplicationAssembly">The calling application assembly</param>
-        public static void AddCommonApplication(this IServiceCollection services, Assembly callingApplicationAssembly = null)
+        /// <param name="services"></param>
+        /// <param name="assemblies"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static void AddCommonApplication(this IServiceCollection services, ICollection<Assembly> assemblies)
         {
-            Assembly callingAssembly = callingApplicationAssembly ?? Assembly.GetCallingAssembly();
-            services.AddAutoMapper(config =>
-            {
-                config.AddProfile(new MappingProfile(callingAssembly));
-            });
-            services.AddValidatorsFromAssembly(callingAssembly);
-            services.AddMediatR(callingAssembly);
+            if (assemblies is null) throw new ArgumentNullException(nameof(assemblies));
+
+            assemblies.Add(Assembly.GetExecutingAssembly());
+
+            services.AddAutoMapper(assemblies);
+            MappingProfile.ConsumingApplicationAssemblies = assemblies;
+
+            services.AddValidatorsFromAssemblies(assemblies);
+            services.AddMediatR(assemblies, cfg => cfg.AsScoped());
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
         }

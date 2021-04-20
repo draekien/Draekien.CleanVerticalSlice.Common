@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draekien.CleanVerticalSlice
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draekien.CleanVerticalSlice.Common.Application.UnitTests", "Test\Draekien.CleanVerticalSlice.Common.Application.UnitTests\Draekien.CleanVerticalSlice.Common.Application.UnitTests.csproj", "{3D747879-4389-44C4-BBB5-BBFA370F1C3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draekien.CleanVerticalSlice.Common.TestUtils", "Src\Draekien.CleanVerticalSlice.Common.TestUtils\Draekien.CleanVerticalSlice.Common.TestUtils.csproj", "{8B925CB9-3380-4FC6-82FE-012B639E9D54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,7 @@ Global
 		{DB007C1B-C0B3-4E98-945B-C97399515C8D} = {1261EFC7-9F07-49D0-B104-9F64F653AEAC}
 		{900866AD-E3A2-40DF-A019-076248CAB8D4} = {1261EFC7-9F07-49D0-B104-9F64F653AEAC}
 		{3D747879-4389-44C4-BBB5-BBFA370F1C3E} = {CA53EA48-5475-4006-907E-18B6302007A5}
+		{8B925CB9-3380-4FC6-82FE-012B639E9D54} = {1261EFC7-9F07-49D0-B104-9F64F653AEAC}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DB007C1B-C0B3-4E98-945B-C97399515C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,5 +36,9 @@ Global
 		{3D747879-4389-44C4-BBB5-BBFA370F1C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D747879-4389-44C4-BBB5-BBFA370F1C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D747879-4389-44C4-BBB5-BBFA370F1C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B925CB9-3380-4FC6-82FE-012B639E9D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B925CB9-3380-4FC6-82FE-012B639E9D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B925CB9-3380-4FC6-82FE-012B639E9D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B925CB9-3380-4FC6-82FE-012B639E9D54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

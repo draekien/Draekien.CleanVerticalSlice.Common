@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 
 using Draekien.CleanVerticalSlice.Common.Application.Mappings;
-
+using Draekien.CleanVerticalSlice.Common.TestUtils.Mappings;
 using Xunit;
 
 namespace Draekien.CleanVerticalSlice.Common.Application.UnitTests.Mappings
@@ -14,7 +14,7 @@ namespace Draekien.CleanVerticalSlice.Common.Application.UnitTests.Mappings
             // Arrange
             var configuration = new MapperConfiguration(config =>
             {
-                config.AddProfile(new MappingProfile(typeof(MappingProfile).Assembly));
+                config.AddProfile(new AutoMapperTestingProfile(typeof(MappingProfile).Assembly));
             });
 
             // Assert

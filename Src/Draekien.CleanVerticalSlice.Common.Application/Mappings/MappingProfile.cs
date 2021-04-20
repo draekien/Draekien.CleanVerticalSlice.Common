@@ -9,40 +9,34 @@ namespace Draekien.CleanVerticalSlice.Common.Application.Mappings
 {
     public class MappingProfile : Profile
     {
-        /// <summary>
-        /// Creates a profile from classes that implement <see cref="IMapFrom{T}"/> in the calling assembly
-        /// </summary>
         public MappingProfile()
         {
-            ApplyMappingsFromAssembly(Assembly.GetExecutingAssembly());
+            ApplyMappingsFromAssemblies(ConsumingApplicationAssemblies);
         }
 
-        /// <summary>
-        /// Creates a profile from classes that implement <see cref="IMapFrom{T}"/> in the specified assembly
-        /// </summary>
-        /// <param name="assembly">An <see cref="Assembly"/></param>
-        public MappingProfile(Assembly assembly)
-        {
-            ApplyMappingsFromAssembly(assembly);
-        }
+        public static IEnumerable<Assembly> ConsumingApplicationAssemblies { get; set; }
 
-        /// <summary>
-        /// Finds all classes that implement <see cref="IMapFrom{T}"/> in the specified assembly and registers their profiles
-        /// </summary>
-        /// <param name="assembly">An <see cref="Assembly"/></param>
-        private void ApplyMappingsFromAssembly(Assembly assembly)
+        private void ApplyMappingsFromAssemblies(IEnumerable<Assembly> assemblies)
         {
-            List<Type> types = assembly.GetExportedTypes()
-                                       .Where(t => t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
-                                       .ToList();
-
-            foreach (Type type in types)
+            foreach (var assembly in assemblies)
             {
-                object instance = Activator.CreateInstance(type);
+                var types = assembly.GetExportedTypes()
+                                    .Where(
+                                        t => t.GetInterfaces()
+                                              .Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>))
+                                    )
+                                    .ToList();
 
-                MethodInfo methodInfo = type.GetMethod("Mapping") ?? type.GetInterface("IMapFrom`1")?.GetMethod("Mapping");
+                foreach (var type in types)
+                {
+                    var instance = Activator.CreateInstance(type);
 
-                methodInfo?.Invoke(instance, new object[] { this });
+                    var methodInfo = type.GetMethod("Mapping")
+                                  ?? type.GetInterface("IMapFrom`1")
+                                         ?.GetMethod("Mapping");
+
+                    methodInfo?.Invoke(instance, new object[] { this });
+                }
             }
         }
     }

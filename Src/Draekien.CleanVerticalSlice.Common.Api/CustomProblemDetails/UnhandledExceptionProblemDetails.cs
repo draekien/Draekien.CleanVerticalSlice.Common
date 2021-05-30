@@ -11,7 +11,7 @@ namespace Draekien.CleanVerticalSlice.Common.Api.CustomProblemDetails
         /// <inheritdoc />
         public UnhandledExceptionProblemDetails(Exception ex) : base(StatusCodes.Status500InternalServerError)
         {
-            Detail = ex?.Message ?? "An unexpected error has occured";
+            Detail = string.IsNullOrWhiteSpace(ex.Message) ? "An unexpected error has occured" : ex.Message;
         }
     }
 }

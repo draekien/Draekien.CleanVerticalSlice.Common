@@ -22,10 +22,10 @@ namespace Draekien.CleanVerticalSlice.Common.TestUtils.Mappings
 
             foreach (var type in types)
             {
-                var instance = Activator.CreateInstance(type);
+                object? instance = Activator.CreateInstance(type);
 
-                var methodInfo = type.GetMethod("Mapping")
-                              ?? type.GetInterface("IMapFrom`1")?.GetMethod("Mapping");
+                MethodInfo? methodInfo = type.GetMethod("Mapping")
+                                      ?? type.GetInterface("IMapFrom`1")?.GetMethod("Mapping");
 
                 methodInfo?.Invoke(instance, new object[] { this });
             }

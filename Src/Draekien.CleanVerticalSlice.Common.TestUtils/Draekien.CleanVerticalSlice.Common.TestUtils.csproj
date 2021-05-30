@@ -12,6 +12,10 @@
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeSymbols>True</IncludeSymbols>
+        <NeutralLanguage>en</NeutralLanguage>
+        <Nullable>enable</Nullable>
+        <PackageVersion>1.1.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>

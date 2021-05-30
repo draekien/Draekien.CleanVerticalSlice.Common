@@ -53,30 +53,30 @@ The Application project configures the following for the calling assembly:
    ```json
    // example serilog configuration
    "Serilog": {
-   "Using": [
-    "Serilog.Sinks.Console",
-    "Serilog.Sinks.Seq",
-    "Serilog.Enrichers.ClientInfo"
-   ],
-   "MinimumLevel": {
-    "Default": "Information",
-    "Override": {
-      "Microsoft": "Warning",
-      "System": "Warning"
-    }
-   },
-   "Enrich": [
-    "FromLogContext",
-    "WithMachineName",
-    "WithThreadId",
-    "WithProcessId",
-    "WithThreadId",
-    "WithClientIp",
-    "WithClientAgent"
-   ],
-   "Properties": {
-      "Application": "WeatherForecast.Api"
-   }
+      "Using": [
+      "Serilog.Sinks.Console",
+      "Serilog.Sinks.Seq",
+      "Serilog.Enrichers.ClientInfo"
+      ],
+      "MinimumLevel": {
+         "Default": "Information",
+         "Override": {
+            "Microsoft": "Warning",
+            "System": "Warning"
+         }
+      },
+      "Enrich": [
+      "FromLogContext",
+      "WithMachineName",
+      "WithThreadId",
+      "WithProcessId",
+      "WithThreadId",
+      "WithClientIp",
+      "WithClientAgent"
+      ],
+      "Properties": {
+         "Application": "WeatherForecast.Api"
+      }
    }
    ```
 
@@ -93,13 +93,15 @@ The Application project configures the following for the calling assembly:
    public IHostEnvironment HostEnvironment { get; }
 
    // in ConfigureServices
-   services.AddCommonApi(
-     HostEnvironment,
-     typeof(Startup).Namespace, // The name of the API for SwaggerDocs
-     new[] { // the assemblies to injest XML documentation from
-       typeof(Startup).Assembly,
-       typeof(Application.DependencyInjection).Assembly
-     });
+   services.AddCommonApiBuilder()
+           .AddCommonApi(
+              typeof(Startup).Namespace, // tne name of the API for swagger
+              HostEnvironment,
+              new[] { // the assemblies to injest XML documentation from
+                 typeof(Startup).Assembly,
+                 typeof(Application.DependencyInjection).Assembly
+              }
+           );
 
    // in Configure
    app.UseCommonApi(env, $"{typeof(Startup).Namepsace} v1");
@@ -110,7 +112,7 @@ The Application project configures the following for the calling assembly:
    ```csharp
    public static void AddApplication(this IServiceCollection services)
    {
-      services.AddCommonApplication();
+      services.AddCommonApplication(new[] { typeof(DependencyInjection).Assembly });
    }
    ```
 

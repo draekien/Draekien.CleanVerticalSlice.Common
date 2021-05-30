@@ -11,7 +11,7 @@ namespace Draekien.CleanVerticalSlice.Common.Api.CustomProblemDetails
         /// <inheritdoc />
         public NotFoundProblemDetails(Exception ex) : base(StatusCodes.Status404NotFound)
         {
-            Detail = ex?.Message ?? "The requested resource was not found";
+            Detail = string.IsNullOrWhiteSpace(ex.Message) ? "The requested resource was not found" : ex.Message;
         }
     }
 }

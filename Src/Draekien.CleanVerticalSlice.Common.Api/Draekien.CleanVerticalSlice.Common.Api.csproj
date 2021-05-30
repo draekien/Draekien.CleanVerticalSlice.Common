@@ -11,7 +11,11 @@
         <RepositoryUrl>https://github.com/draekien/Draekien.CleanVerticalSlice.Common</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeSymbols>True</IncludeSymbols>
+        <NeutralLanguage>en</NeutralLanguage>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Nullable>enable</Nullable>
+        <PackageVersion>1.1.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>

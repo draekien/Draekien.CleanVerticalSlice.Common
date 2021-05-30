@@ -19,7 +19,7 @@ namespace Draekien.CleanVerticalSlice.Common.Api.CustomProblemDetails
         /// <inheritdoc />
         public BadRequestProblemDetails(Exception ex) : base(StatusCodes.Status400BadRequest)
         {
-            Detail = ex?.Message;
+            Detail = ex.Message;
         }
     }
 }

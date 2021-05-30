@@ -2,7 +2,7 @@
 using System.Linq;
 
 using Microsoft.AspNetCore.Http;
-
+using Microsoft.Extensions.Primitives;
 using Serilog.Core;
 using Serilog.Events;
 
@@ -39,7 +39,7 @@ namespace Draekien.CleanVerticalSlice.Common.Api.Enrichers
         {
             var header = string.Empty;
 
-            if (context.Request.Headers.TryGetValue(_headerKey, out var values))
+            if (context.Request.Headers.TryGetValue(_headerKey, out StringValues values))
             {
                 header = values.FirstOrDefault();
             }

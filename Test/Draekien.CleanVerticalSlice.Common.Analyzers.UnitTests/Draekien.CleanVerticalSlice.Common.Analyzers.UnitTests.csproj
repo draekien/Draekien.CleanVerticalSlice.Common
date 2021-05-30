@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="9.0.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Analyzer.Testing.XUnit" Version="1.0.1-beta1.21210.1" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeFix.Testing.XUnit" Version="1.0.1-beta1.21210.1" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="1.3.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Src\Draekien.CleanVerticalSlice.Common.Analyzers\Draekien.CleanVerticalSlice.Common.Analyzers.csproj" />
+      <ProjectReference Include="..\..\Src\Draekien.CleanVerticalSlice.Common.Application\Draekien.CleanVerticalSlice.Common.Application.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="..\..\libs\**\*.*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>            
+        </Content>
+    </ItemGroup>
+
+</Project>

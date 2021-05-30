@@ -15,7 +15,7 @@ namespace Draekien.CleanVerticalSlice.Common.Application.Behaviours
     /// </summary>
     /// <typeparam name="TRequest">The request type</typeparam>
     /// <typeparam name="TResponse">The response type</typeparam>
-    public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
 
